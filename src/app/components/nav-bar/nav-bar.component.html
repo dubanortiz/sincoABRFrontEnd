@@ -1,6 +1,5 @@
 <aside>
     <div id="sidebar" class="nav-collapse ">
-      <!-- sidebar menu start-->
       <ul class="sidebar-menu" id="nav-accordion">
 
         <li class="sub-menu">
@@ -8,11 +7,10 @@
             <i class="fa fa-users"></i>
             <span>Gestión de Usuarios</span>
             </a>
-            
           <ul class="sub">
             <li><a [routerLink]="['/user/create']" >Crear Usuario</a></li>
-            <li><a [routerLink]="['/user/update']">Actualizar datos</a></li>
-          </ul>
+            <li><a [routerLink]="['/user']" >Usuarios</a></li>
+           </ul>
         </li>
         <li class="sub-menu">
           <a href="javascript:;">
@@ -20,28 +18,10 @@
             <span>Gestión Académica</span>
             </a>
           <ul class="sub">
-            <li><a [routerLink]="['/academic/create']"  >Crear Asignatura</a></li>
-            <li><a [routerLink]="['/academic/registration']" >Matricular Asignatura</a></li>
-            <li><a [routerLink]="['/academic/assign']" >Asignar Materia</a></li>
-            <li><a [routerLink]="['/academic/report']" >Reporte</a></li>
-          </ul>
-        </li>
-
-        <li class="sub-menu">
-          <a href="javascript:;">
-            <i class="fa fa-book"></i>
-            <span>Notas</span>
-            </a>
-          <ul class="sub">
-            <li><a [routerLink]="['/notes/liststudent']"  >Lista de estudiantes</a></li>
-            <!-- <li><a [routerLink]="['/notes/individualnote']" >Notas de estudiante</a></li> -->
      
+            <li><a [routerLink]="['report']" >Reporte</a></li>
           </ul>
         </li>
-
-
-
       </ul>
-      <!-- sidebar menu end-->
     </div>
   </aside>

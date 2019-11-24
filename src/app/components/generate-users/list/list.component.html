@@ -1,0 +1,28 @@
+<div class="content-panel">
+    <h4><i class="fa fa-angle-right"></i>Usuarios</h4>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Tipo</th>
+          <th>Ver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usuarios">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.surname }}</td>
+          <td>{{ user.personTypeNavigation.nameType }}</td>
+          <td>
+            <button type="button" (click)="updateUser(user.id)" class="btn btn-round btn-info"> Ver </button>
+            <button type="button"  *ngIf="user.personTypeNavigation.nameType=='Estudiante'" (click)="matriculateCourse(user.id)" class="btn btn-round btn-primary"> Matricular </button>
+            <button type="button" *ngIf="user.personTypeNavigation.nameType=='Profesor'" (click)="assignCourse(user.id)" class="btn btn-round btn-success"> Asignar </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

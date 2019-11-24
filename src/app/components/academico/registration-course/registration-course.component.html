@@ -1,1 +1,42 @@
-<p>registration-course works!</p>
+<div class="weather-2 sombra">
+        <div class="weather-2-header">
+          <div class="row">
+            <div class="col-sm-6 col-xs-6">
+              <p>Matricular Materias</p>
+            </div>
+            <div class="col-sm-6 col-xs-6 goright">
+              <p class="small">{{ myDate | date:'yyyy-MM-dd' }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row data">        
+            <div class="form-group">  
+                <input  [(ngModel)]="nombre" class="form-control" placeholder="Nombre de Asignatura">
+            </div>
+            <table class="table"  >
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nombres</th>                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let user of asignados">
+                        <td>{{ user.idCourse }}</td>
+                        <!-- <td>{{ user.nameCourse }}</td>  -->
+                        <td><button type="button" (click)="redirec(user.idCourse)" class="btn btn-round btn-default"> {{ user.nameCourse }} </button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            <div class="form-group">
+                <label >Asignatura</label>
+                <select class="form-control"  [(ngModel)]="id_course">
+                  <option *ngFor="let t of Cursos" [value]="t.idCourse">{{t.nameCourse}}</option>
+                </select>               
+              </div>
+              <app-notes  *ngIf="materia" [materia]="materia" [idPerson]="id"></app-notes>              
+              <div class="form-group text-right">
+            <button type="button" class="btn btn-round btn-primary" (click)="getAssign()">Matricular</button>
+            </div>
+        </div>
+      </div>

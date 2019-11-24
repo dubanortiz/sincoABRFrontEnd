@@ -5,16 +5,16 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { RegistrationCourseComponent } from './registration-course/registration-course.component';
 import { AssignCourseComponent } from './assign-course/assign-course.component';
 import { NotesComponent } from './notes/notes.component';
-import { ListStudentComponent } from './list-student/list-student.component';
 import { AcademicoComponent } from './academico/academico.component';
-import { IndividualNoteComponent } from './individual-note/individual-note.component';
 import { ReportComponent } from './report/report.component';
-
+import { AcademicalService } from "../../services/academical.service";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [CreateCourseComponent, RegistrationCourseComponent, AssignCourseComponent, NotesComponent, ListStudentComponent, AcademicoComponent, IndividualNoteComponent, ReportComponent],
+  declarations: [CreateCourseComponent, RegistrationCourseComponent, AssignCourseComponent, NotesComponent,  AcademicoComponent, ReportComponent],
   imports: [
-    CommonModule, AcademicoRoutingModule
-  ]
+    CommonModule, AcademicoRoutingModule, FormsModule
+  ],
+  providers:[AcademicalService]
 })
 export class AcademicoModule { }

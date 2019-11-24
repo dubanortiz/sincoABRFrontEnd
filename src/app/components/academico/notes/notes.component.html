@@ -1,2 +1,31 @@
-<p>notes works!</p>
-<router-outlet></router-outlet>
+<div class="darkblue-panel sombra">
+        <div class="darkblue-header">
+            <h5>{{ materia.nameCourse }}</h5>
+          </div>
+            <div class="row data">        
+                <div class="form-group">  
+                    <input  [(ngModel)]="Nota" class="form-control" placeholder="Nota">
+                </div>           
+                <div class="form-group">
+                    <label >Periodo</label>
+                    <select class="form-control"  [(ngModel)]="id_Periodo">
+                      <option *ngFor="let t of periodos" [value]="t.idPeriod">{{t.namePeriod}}</option>
+                    </select>               
+                  </div>
+    
+                  <div class="form-group">
+                      <label >profesor</label>
+                      <select class="form-control"  [(ngModel)]="id_profesor">
+                        <option *ngFor="let t of profesores" [value]="t.id">{{t.name}}</option>
+                      </select>               
+                    </div>
+    
+                  <div class="form-group text-right">
+                <button type="button" class="btn btn-round btn-primary" (click)="registrarNota()">Calificar</button>
+                </div>
+            </div>
+          </div>
+    
+          <!-- <div class="darkblue-panel pn">
+            
+          </div> -->

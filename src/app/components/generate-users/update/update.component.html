@@ -1,1 +1,51 @@
-<p>update works!</p>
+<div class="weather-2 sombra">
+    <div class="weather-2-header">
+      <div class="row">
+        <div class="col-sm-6 col-xs-6">
+          <p>Modificar Usuario</p>
+        </div>
+        <div class="col-sm-6 col-xs-6 goright">
+          <p class="small">{{ myDate | date:'yyyy-MM-dd' }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- /weather-2 header -->
+
+
+    <div class="row data">
+        
+    <div class="form-group ">
+            <label for="firstname" class="control-label col-lg-2">Cedula</label>
+            <div class="col-lg-10">
+                <input  [(ngModel)]="datos.id" class="form-control"   readonly>
+            </div>
+        </div>
+    
+        <div class="form-group ">
+            <label for="firstname" class="control-label col-lg-2">Nombres</label>
+            <div class="col-lg-10">
+                <input  [(ngModel)]="datos.name" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-group ">
+            <label for="firstname" class="control-label col-lg-2">Apellidos</label>
+            <div class="col-lg-10">
+                <input [(ngModel)]="datos.surname" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-group ">
+            <label for="firstname" class="control-label col-lg-2">Tipo Usuario</label>
+            <div class="col-lg-10">
+                <input [(ngModel)]="typo" class="form-control" readonly>
+            </div>
+        </div>
+    
+        <div class="form-group text-right">                
+            <button type="button" class="btn btn-round btn-primary m-2" (click)="updateUsername()" >Modificar</button>
+            <button type="button" class="btn btn-round btn-warning m-2" (click)="deleteUsername()" >Eliminar</button>
+        </div>
+    </div>
+  </div>
+
